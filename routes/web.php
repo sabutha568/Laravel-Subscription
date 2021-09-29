@@ -13,23 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'UserSubscribtionController@getSubscribe');
+Route::post('/', 'UserSubscribtionController@postSubscribe');
 
 
-Route::resource('subscribe', 'ThreadSubscriptionsController');
+
 
 Route::resource('coupon', 'CouponController');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/threads', 'ThreadSubscriptionsController@create');
-Route::post('/threads', 'ThreadSubscriptionsController@store');
-
-
-Route::post('/threads/{channel}/{thread}/subscriptions', 'SubscribesController@store')->middleware('auth');
 
 
