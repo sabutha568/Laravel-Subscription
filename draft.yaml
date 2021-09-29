@@ -1,0 +1,26 @@
+models:
+    User:
+        id: integer
+        name: string
+        email: string
+        email_verified_at: timestamp
+        password: string
+        remember_token: string
+    Subscribe:
+        id: 'id:10 unique'
+        email: 'string:20 unique'
+        coupon_code: 'uuid:5'
+        date: date
+        relationships:
+            hasOne: User
+    Coupon:
+        id: 'id:10 unique'
+        coupon_code: 'uuid:5'
+        email: 'string:20 unique'
+        relationships:
+            hasMany: Subscribe
+controllers:
+    Subscribe:
+        resource: web
+    Coupon:
+        resource: web

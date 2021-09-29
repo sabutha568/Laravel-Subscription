@@ -1,0 +1,21 @@
+content{
+  .form {
+      position : relative;
+      width  : 740px;
+      height : 498px;
+      margin : 0 auto;
+      padding: 1em;
+      box-sizing: border-box;
+      background : #FFF;
+    
+      /* we create our grid */
+      display  : grid;
+      grid-gap : 20px;
+      grid-template-columns : repeat(2, 1fr);
+      grid-template-rows    : 10em 1em 1em 1em;
+    }
+
+  .form.subscribe.subscribe-button{
+    color: rgb(160, 12, 12);
+  }
+}
